@@ -1,0 +1,1 @@
+Coffeescript: coffee -o ./lib/js/ -cbw ./lib/coffee/

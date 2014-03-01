@@ -1,0 +1,39 @@
+{
+  "manifest_version": 2,
+  "name": "Youtoo Tools",
+  "short_name": "Youtoo Tools",
+  "version": "0.0.1",
+  "description": "Chrome extension that will allow clients to easily access actions during debugging, such as clearing cookies and cache.",
+  "icons": {
+    "16": "lib/img/youtoo_logo_16.png",
+    "48": "lib/img/youtoo_logo_48.png",
+    "128": "lib/img/youtoo_logo_128.png"
+  },
+  "author": "Pierce Moore <me@prex.io>",
+  "background": {
+    "scripts": ["lib/js/main.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "lib/img/youtoo_logo_19.png",
+      "38": "lib/img/youtoo_logo_38.png"
+    },
+    "default_title": "Youtoo Tools",
+    "default_popup": "lib/popup.html"
+  },
+  "offline_enabled": true,
+  "permissions": [
+    "http://*/*",
+    "https://*/*",
+    "browsingData",
+    "cookies",
+    "clipboardRead",
+    "clipboardWrite",
+    "pageCapture",
+    "tabCapture"
+  ],
+  "web_accessible_resources": [
+    "lib/img/*.png"
+  ]
+}
