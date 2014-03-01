@@ -1,1 +1,1 @@
-alert("This is coming from main!")
+class Main

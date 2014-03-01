@@ -20,7 +20,7 @@
       "38": "lib/img/youtoo_logo_38.png"
     },
     "default_title": "Youtoo Tools",
-    "default_popup": "lib/popup.html"
+    "default_popup": "lib/youtoo_tools.html"
   },
   "offline_enabled": true,
   "permissions": [
