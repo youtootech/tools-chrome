@@ -11,34 +11,34 @@ html(lang='en')
     .container-fluid.bg.lightest
       .row.padding-top.padding-bottom.bg.darker
         .col-xs-12.text.small.center.color.dark_green
-          strong.color.peter-river.padding-right Youtoo Tools
+          strong.color.peter-river.padding-right.text.huge Youtoo Tools
           | Easily troubleshoot browser and website issues.
 
       .row.padding-bottom.padding-top
-        .col-xs-6
-          a.btn.btn-default.btn-block(href='#', data-toggle='modal', data-target='#modal-confirm-cache-clear')
-            span.glyphicon.glyphicon-flash
-            | Clear Browser Cache
-        .col-xs-6
-          a.btn.btn-default.btn-block(href='#', data-toggle='modal', data-target='#modal-confirm-cookies-clear')
-            span.glyphicon.glyphicon-flash
-            | Clear Cookies
+        .col-xs-12
+          .btn-group.btn-group-justified
+            a.btn.btn-default(href='#', data-toggle='modal', data-target='#modal-confirm-cache-clear')
+              span.glyphicon.glyphicon-flash
+              | Clear Browser Cache
+            a.btn.btn-default(href='#', data-toggle='modal', data-target='#modal-confirm-cookies-clear')
+              span.glyphicon.glyphicon-flash
+              | Clear Cookies
 
       .row.padding-bottom
-        .col-xs-6
-          a#action-cache-disable.btn.btn-danger.btn-block(href='#')
-            span.glyphicon.glyphicon-remove
-            | Disable Browser Cache
-          a#action-cache-enable.btn.btn-success.btn-block.hidden(href='#')
-            span.glyphicon.glyphicon-ok
-            | Enable Browser Cache
-        .col-xs-6
-          a#action-incognito-create.btn.btn-info.btn-block(href='#')
-            span.glyphicon.glyphicon-eye-close
-            | Incognito Window
+        .col-xs-12
+          .btn-group.btn-group-justified
+            a#action-cache-disable.btn.btn-danger.text.small(href='#')
+              span.glyphicon.glyphicon-remove
+              | Disable Browser Cache
+            a#action-cache-enable.btn.btn-success.text.small.hidden(href='#')
+              span.glyphicon.glyphicon-ok
+              | Enable Browser Cache
+            a#action-incognito-create.btn.btn-info.text.small(href='#')
+              span.glyphicon.glyphicon-eye-close
+              | Incognito Window
 
-      .row.bg.darker.margin-top.padding-bottom.padding-top
-        .col-xs-12.color.light_green.text.small
+      .row.margin-top.padding-bottom.padding-top
+        .col-xs-12.color.darker.text.small
           | Developed by
           strong
             a(href='#') Youtoo Technologies
