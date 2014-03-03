@@ -8,13 +8,11 @@ html(lang='en')
     link(rel='stylesheet', type='text/css', href='css/youtoo_tools.min.css')
 
   body
-    .container-fluid.bg.lighter
-      .row.padding-top.bg.darkest
-        .col-xs-3
-          img.responsive.logo(src='img/youtoo_logo_128.png')
-        .col-xs-9
-          h4.color.light_turquoise Youtoo Tools
-          p.color.light_green.text.light Making it easy to troubleshoot browser and website issues.
+    .container-fluid.bg.lightest
+      .row.padding-top.padding-bottom.bg.darker
+        .col-xs-12.text.small.center.color.dark_green
+          strong.color.peter-river.padding-right Youtoo Tools
+          | Easily troubleshoot browser and website issues.
 
       .row.padding-bottom.padding-top
         .col-xs-6
@@ -26,7 +24,7 @@ html(lang='en')
             span.glyphicon.glyphicon-flash
             | Clear Cookies
 
-      .row
+      .row.padding-bottom
         .col-xs-6
           a#action-cache-disable.btn.btn-danger.btn-block(href='#')
             span.glyphicon.glyphicon-remove
@@ -39,8 +37,8 @@ html(lang='en')
             span.glyphicon.glyphicon-eye-close
             | Incognito Window
 
-      .row
-        .col-xs-12
+      .row.bg.darker.margin-top.padding-bottom.padding-top
+        .col-xs-12.color.light_green.text.small
           | Developed by
           strong
             a(href='#') Youtoo Technologies
@@ -49,30 +47,26 @@ html(lang='en')
       #modal-confirm-cache-clear.modal.fade
         .modal-dialog.modal-sm
           .modal-content
-            .modal-header
-              h3 Confirm
             .modal-body
               | Are you sure that you want to clear your browser's cache?
             .modal-footer
-              button#action-cache-clear.success.normal.inline(data-modal='close')
+              a#action-cache-clear.btn.btn-success.btn-small(data-dismiss='modal')
                 span.glyphicon.glyphicon-ok
-                | Confirm
-              button.alert.normal.inline(data-modal='close')
+                | Clear the cache.
+              a.btn.btn-danger.btn-small(data-dismiss='modal')
                 span.glyphicon.glyphicon-remove
                 | Cancel
 
       #modal-confirm-cookies-clear.modal.fade
         .modal-dialog.modal-sm
           .modal-content
-            .modal-header
-              h3 Confirm
             .modal-body
               | Are you sure that you want to clear your browser's cookies?
             .modal-footer
-              button#action-cookies-clear.success.normal.inline(data-modal='close')
+              a#action-cookies-clear.btn.btn-success.btn-small(data-dismiss='modal')
                 span.glyphicon.glyphicon-ok
-                | Confirm
-              button.alert.normal.inline(data-modal='close')
+                | Clear my cookies.
+              a.btn.btn-danger.btn-small(data-dismiss='modal')
                 span.glyphicon.glyphicon-remove
                 | Cancel
 

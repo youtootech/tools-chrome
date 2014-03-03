@@ -7,6 +7,30 @@
 @light_turquoise: #1ABC9C;
 @dark_turquoise: #16A085;
 
+/**
+ * Beautiful colors taken from Flat-UI http://designmodo.github.io/Flat-UI/
+ */
+@turquoise: #1ABC9C;
+@green-sea: #16A085;
+@emerald: #2ECC71;
+@nephritis: #27AE60;
+@peter-river: #3498DB;
+@belize-hole: #2980B9;
+@amethyst: #9B59B6;
+@wisteria: #8E44AD;
+@wet-asphalt: #34495E;
+@midnight-blue: #2C3E50;
+@sun-flower: #F1C40F;
+@orange: #F39C12;
+@carrot: #E67E22;
+@pumpkin: #D35400;
+@alizarin: #E74C3C;
+@pomegranate: #C0392B;
+@clouds: #ECF0F1;
+@silver: #BDC3C7;
+@concrete: #95A5A6;
+@asbestos: #7F8C8D;
+
 body, html, h1,h2,h3,h4,h5,h6,p,span {
   font-family: 'Lato', 'Helvetica Neue', sans-serif;
 }
@@ -25,8 +49,20 @@ body {
 }
 
 img.responsive.logo {
-  max-width: 75px;
-  max-height: 75px;
+  max-width: 48px;
+  max-height: 48px;
+}
+
+p {
+  margin: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.bg.darker a:hover {
+  .color.peter-river();
 }
 
 .top5 { margin-top:5px; }
@@ -41,31 +77,90 @@ img.responsive.logo {
 .padding-left { padding-left: 10px; }
 .padding-right { padding-right: 10px; }
 
-.bg {
-  &.darkest { background: @dark_asphalt; }
-  &.darker { background: @light_asphalt; }
-  &.lighter { background: @dark_grey; }
-  &.lightest { background: @light_grey; }
-  &.light_green { background: @light_green; }
-  &.dark_green { background: @dark_green; }
-  &.light_turquoise { background: @light_turquoise; }
-  &.dark_turquoise { background: @dark_turquoise; }
+.color{
+  &.darkest { color: @midnight-blue; }
+  &.darker { color: @wet-asphalt; }
+  &.lighter { color: @silver; }
+  &.lightest { color: @clouds; }
+  &.light_green { color: @emerald; }
+  &.dark_green { color: @nephritis; }
+  &.light_turquoise { color: @turquoise; }
+  &.dark_turquoise { color: @green-sea; }
+
+  &.turquoise{ color: @turquoise; }
+  &.green-sea{ color: @green-sea; }
+  &.emerald{ color: @emerald; }
+  &.nephritis{ color: @nephritis; }
+  &.peter-river{ color: @peter-river; }
+  &.belize-hole{ color: @belize-hole; }
+  &.amethyst{ color: @amethyst; }
+  &.wisteria{ color: @wisteria; }
+  &.wet-asphalt{ color: @wet-asphalt; }
+  &.midnight-blue{ color: @midnight-blue; }
+  &.sun-flower{ color: @sun-flower; }
+  &.orange{ color: @orange; }
+  &.carrot{ color: @carrot; }
+  &.pumpkin{ color: @pumpkin; }
+  &.alizarin{ color: @alizarin; }
+  &.pomegranate{ color: @pomegranate; }
+  &.clouds{ color: @clouds; }
+  &.silver{ color: @silver; }
+  &.concrete{ color: @concrete; }
+  &.asbestos{ color: @asbestos; }
 }
 
-.color{
-  &.darkest { color: @dark_asphalt; }
-  &.darker { color: @light_asphalt; }
-  &.lighter { color: @dark_grey; }
-  &.lightest { color: @light_grey; }
-  &.light_green { color: @light_green; }
-  &.dark_green { color: @dark_green; }
-  &.light_turquoise { color: @light_turquoise; }
-  &.dark_turquoise { color: @dark_turquoise; }
+.bg {
+  &.darkest { background: @midnight-blue; }
+  &.darker { background: @wet-asphalt; }
+  &.lighter { background: @silver; }
+  &.lightest { background: @clouds; }
+  &.light_green { background: @emerald; }
+  &.dark_green { background: @nephritis; }
+  &.light_turquoise { background: @turquoise; }
+  &.dark_turquoise { background: @green-sea; }
+
+  &.turquoise{ background: @turquoise; }
+  &.green-sea{ background: @green-sea; }
+  &.emerald{ background: @emerald; }
+  &.nephritis{ background: @nephritis; }
+  &.peter-river{ background: @peter-river; }
+  &.belize-hole{ background: @belize-hole; }
+  &.amethyst{ background: @amethyst; }
+  &.wisteria{ background: @wisteria; }
+  &.wet-asphalt{ background: @wet-asphalt; }
+  &.midnight-blue{ background: @midnight-blue; }
+  &.sun-flower{ background: @sun-flower; }
+  &.orange{ background: @orange; }
+  &.carrot{ background: @carrot; }
+  &.pumpkin{ background: @pumpkin; }
+  &.alizarin{ background: @alizarin; }
+  &.pomegranate{ background: @pomegranate; }
+  &.clouds{ background: @clouds; }
+  &.silver{ background: @silver; }
+  &.concrete{ background: @concrete; }
+  &.asbestos{ background: @asbestos; }
 }
+
+
 
 .text {
   &.light { font-weight: 300; }
   &.normal { font-weight: 400; }
   &.bold { font-weight: 700; }
+  &.center { text-align: center; }
+  &.left { text-align: left; }
+  &.right { text-align: right; }
+  &.small { font-size: 0.8em; }
+  &.tiny { font-size: 0.6em; }
+  &.big { font-size: 1.2em; }
+  &.huge { font-size: 1.5em; }
 }
 
+.modal {
+  .modal-dialog {
+    .modal-content {
+      .modal-body { padding: 10px; }
+      .modal-footer { padding: 3px 5px 3px 0; }
+    }
+  }
+}
