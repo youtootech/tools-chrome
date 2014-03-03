@@ -32,6 +32,7 @@
     "storage"
   ],
   "web_accessible_resources": [
-    "lib/img/*.png"
-  ]
+    "lib/**/*"
+  ],
+  "content_security_policy": "script-src 'self' https://netdna.bootstrapcdn.com; object-src 'self'"
 }

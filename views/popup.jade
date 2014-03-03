@@ -4,66 +4,77 @@ html(lang='en')
     meta(charset='utf-8')
     title youtoo tools
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    link(rel='stylesheet', type='text/css', href='https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
     link(rel='stylesheet', type='text/css', href='css/youtoo_tools.min.css')
+
   body
-    section.padding-bottom.bck.dark.text.center
-      .flexbox
-        .flex_1.padding-left.padding-top.padding-right
+    .container-fluid.bg.lighter
+      .row.padding-top.bg.darkest
+        .col-xs-3
           img.responsive.logo(src='img/youtoo_logo_128.png')
-        .flex_3.padding-top.padding-right
-          h4.color.theme Youtoo Tools
-          p Making it easy to troubleshoot browser and website issues.
-    section.text.center.book.padding-top.padding-left.padding-right
-      .flexbox
-        .flex_1(style='padding: 2px;')
-          a.button.anchor.secondary(href='#', data-tuktuk-modal='modal-confirm-cache-clear')
-            span.icon.bolt
+        .col-xs-9
+          h4.color.light_turquoise Youtoo Tools
+          p.color.light_green.text.light Making it easy to troubleshoot browser and website issues.
+
+      .row.padding-bottom.padding-top
+        .col-xs-6
+          a.btn.btn-default.btn-block(href='#', data-toggle='modal', data-target='#modal-confirm-cache-clear')
+            span.glyphicon.glyphicon-flash
             | Clear Browser Cache
-        .flex_1(style='padding: 2px;')
-          a.button.anchor.secondary(href='#', data-tuktuk-modal='modal-confirm-cookies-clear')
-            span.icon.bolt
+        .col-xs-6
+          a.btn.btn-default.btn-block(href='#', data-toggle='modal', data-target='#modal-confirm-cookies-clear')
+            span.glyphicon.glyphicon-flash
             | Clear Cookies
-    section.text.center.book.padding-top.padding-left.padding-right.padding-bottom
-      .flexbox
-        .flex_1(style='padding: 2px;')
-          a#action-cache-disable.button.anchor.alert(href='#')
-            span.icon.remove
+
+      .row
+        .col-xs-6
+          a#action-cache-disable.btn.btn-danger.btn-block(href='#')
+            span.glyphicon.glyphicon-remove
             | Disable Browser Cache
-          a#action-cache-enable.button.anchor.success.none(href='#')
-            span.icon.remove
+          a#action-cache-enable.btn.btn-success.btn-block.hidden(href='#')
+            span.glyphicon.glyphicon-remove
             | Enable Browser Cache
-        .flex_1(style='padding: 2px;')
-          a#action-incognito-create.button.anchor(href='#')
-            span.icon.eye-close
+        .col-xs-6
+          a#action-incognito-create.btn.btn-info.btn-block(href='#')
+            span.glyphicon.glyphicon-eye-close
             | Incognito Window
-    footer.padding-left.padding-bottom.text.small.book
-      | Developed by
-      strong
-        a(href='#') Youtoo Technologies
-      | , 2014
-    #modal-confirm-cache-clear.column_6(data-tuktuk='modal')
-      header
-        h3 Confirm
-      article
-        | Are you sure that you want to clear your browser's cache?
-      footer
-        button#action-cache-clear.success.normal.inline(data-modal='close')
-          span.icon.ok
-          | Confirm
-        button.alert.normal.inline(data-modal='close')
-          span.icon.remove
-          | Cancel
-    #modal-confirm-cookies-clear.column_6(data-tuktuk='modal')
-      header
-        h3 Confirm
-      article
-        | Are you sure that you want to clear your browser's cookies?
-      footer
-        button#action-cookies-clear.success.normal.inline(data-modal='close')
-          span.icon.ok
-          | Confirm
-        button.alert.normal.inline(data-modal='close')
-          span.icon.remove
-          | Cancel
+
+      .row
+        .col-xs-12
+          | Developed by
+          strong
+            a(href='#') Youtoo Technologies
+          | , 2014
+
+      #modal-confirm-cache-clear.modal.fade
+        .modal-dialog.modal-sm
+          .modal-content
+            .modal-header
+              h3 Confirm
+            .modal-body
+              | Are you sure that you want to clear your browser's cache?
+            .modal-footer
+              button#action-cache-clear.success.normal.inline(data-modal='close')
+                span.glyphicon.glyphicon-ok
+                | Confirm
+              button.alert.normal.inline(data-modal='close')
+                span.glyphicon.glyphicon-remove
+                | Cancel
+
+      #modal-confirm-cookies-clear.modal.fade
+        .modal-dialog.modal-sm
+          .modal-content
+            .modal-header
+              h3 Confirm
+            .modal-body
+              | Are you sure that you want to clear your browser's cookies?
+            .modal-footer
+              button#action-cookies-clear.success.normal.inline(data-modal='close')
+                span.glyphicon.glyphicon-ok
+                | Confirm
+              button.alert.normal.inline(data-modal='close')
+                span.glyphicon.glyphicon-remove
+                | Cancel
 
     script(type='text/javascript', src='js/youtoo_tools.min.js')
+    script(type='text/javascript', src='https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')

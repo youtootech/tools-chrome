@@ -37,6 +37,9 @@ module.exports = (grunt) ->
       img: [
         "#{PUBLIC}/img/**"
       ]
+      fonts: [
+        "#{PUBLIC}/fonts"
+      ]
     coffee:
       compile:
         options:
@@ -57,14 +60,15 @@ module.exports = (grunt) ->
         process: process
       css:
         src: [
-          "build/css/tuktuk.css"
-          "build/css/**/*.css"
-          "build/css/youtoo_tools.css"
+          "#{BUILD}/css/typography.min.css"
+          # "#{BUILD}/css/bootstrap.min.css"
+          "#{BUILD}/css/**/*.min.css"
+          "#{BUILD}/css/youtoo_tools.min.css"
         ]
         dest: 'lib/css/youtoo_tools.min.css'
       js:
         src: [
-          "#{BUILD}/js/vendor/zepto.min.js"
+          "#{BUILD}/js/vendor/jquery.min.js"
           "#{BUILD}/js/vendor/**/*.min.js"
           "#{BUILD}/js/main.min.js"
           "#{BUILD}/js/**/*.min.js"
@@ -79,8 +83,9 @@ module.exports = (grunt) ->
         flatten: true
         filter: 'isFile'
         src: [
-          "#{BOWER}/tuktuk/tuktuk.js"
-          "#{BOWER}/zeptojs/dist/zepto.min.js"
+          # "#{BOWER}/bootstrap/dist/js/bootstrap.min.js"
+          "#{BOWER}/jquery/dist/jquery.min.js"
+          # "#{BOWER}/zeptojs/dist/zepto.min.js"
         ]
         dest: 'build/js/vendor'
       css:
@@ -88,12 +93,17 @@ module.exports = (grunt) ->
         flatten: true
         filter: 'isFile'
         src: [
-          "#{BOWER}/tuktuk/**/*.css"
-          "#{BOWER}/tuktuk/**/*.*.css"
-          # "!#{BOWER}/tuktuk/tuktuk.theme.default.css"
-          # "!#{BOWER}/tuktuk/tuktuk.theme.mock.css"
+          # "#{BOWER}/bootstrap/dist/css/bootstrap.min.css"
         ]
         dest: 'build/css'
+      fonts:
+        expand: true
+        flatten: true
+        filter: 'isFile'
+        src: [
+          # "#{BOWER}/bootstrap/dist/fonts/*"
+        ]
+        dest: 'lib/fonts/'
     cssmin:
       options:
         report: 'min'
@@ -161,8 +171,14 @@ module.exports = (grunt) ->
           ]
           compress: false
           cleancss: false
-        files:
-          "build/css/youtoo_tools.css": ["less/**/*.less"]
+        files: [{
+          expand: true
+          cwd: 'less/'
+          src: '**/*.less'
+          dest: 'build/css/'
+          ext: '.css'
+          # "build/css/youtoo_tools.css": ["less/**/*.less"]
+        }]
     lesslint:
       src: ['less/**/*.less']
     uglify:
@@ -238,9 +254,9 @@ module.exports = (grunt) ->
   ###
     Actual code/build tasks
   ###
-  grunt.registerTask 'css', ['clean:css', 'less', 'copy:css', 'concat:css']
+  grunt.registerTask 'css', ['clean:css', 'less', 'copy:css', 'cssmin', 'concat:css']
   grunt.registerTask 'js', ['clean:js', 'coffee', 'copy:js', 'uglify', 'concat:js']
-  grunt.registerTask 'assets', ['clean:img', 'image_resize']
+  grunt.registerTask 'assets', ['clean:img', 'clean:fonts', 'copy:fonts', 'image_resize']
 
   ###
     Development tasks

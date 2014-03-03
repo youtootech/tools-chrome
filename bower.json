@@ -16,8 +16,6 @@
   "dependencies": {
     "async": "latest",
     "mocha": "latest",
-    "foundation": "latest",
-    "tuktuk": "0.7.6",
-    "zeptojs": "latest"
+    "bootstrap": "latest"
   }
 }

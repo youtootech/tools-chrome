@@ -1,12 +1,71 @@
+@light_grey: #ECF0F1;
+@dark_grey: #BDC3C7;
+@light_asphalt: #34495E;
+@dark_asphalt: #2C3E50;
+@light_green: #2ECC71;
+@dark_green: #27AE60;
+@light_turquoise: #1ABC9C;
+@dark_turquoise: #16A085;
+
+body, html, h1,h2,h3,h4,h5,h6,p,span {
+  font-family: 'Lato', 'Helvetica Neue', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,strong {
+  font-weight: 700;
+}
+
 body, html {
   height: auto;
 }
 
 body {
   width: 400px;
+  background: @light_grey;
 }
 
 img.responsive.logo {
   max-width: 75px;
   max-height: 75px;
 }
+
+.top5 { margin-top:5px; }
+.top7 { margin-top:7px; }
+.top10 { margin-top:10px; }
+.top15 { margin-top:15px; }
+.top17 { margin-top:17px; }
+.top30 { margin-top:30px; }
+
+.padding-bottom { padding-bottom: 10px; }
+.padding-top { padding-top: 10px; }
+.padding-left { padding-left: 10px; }
+.padding-right { padding-right: 10px; }
+
+.bg {
+  &.darkest { background: @dark_asphalt; }
+  &.darker { background: @light_asphalt; }
+  &.lighter { background: @dark_grey; }
+  &.lightest { background: @light_grey; }
+  &.light_green { background: @light_green; }
+  &.dark_green { background: @dark_green; }
+  &.light_turquoise { background: @light_turquoise; }
+  &.dark_turquoise { background: @dark_turquoise; }
+}
+
+.color{
+  &.darkest { color: @dark_asphalt; }
+  &.darker { color: @light_asphalt; }
+  &.lighter { color: @dark_grey; }
+  &.lightest { color: @light_grey; }
+  &.light_green { color: @light_green; }
+  &.dark_green { color: @dark_green; }
+  &.light_turquoise { color: @light_turquoise; }
+  &.dark_turquoise { color: @dark_turquoise; }
+}
+
+.text {
+  &.light { font-weight: 300; }
+  &.normal { font-weight: 400; }
+  &.bold { font-weight: 700; }
+}
+
