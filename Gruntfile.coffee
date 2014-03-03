@@ -70,9 +70,9 @@ module.exports = (grunt) ->
         src: [
           "#{BUILD}/js/vendor/jquery.min.js"
           "#{BUILD}/js/vendor/**/*.min.js"
-          "#{BUILD}/js/main.min.js"
           "#{BUILD}/js/**/*.min.js"
           "#{BUILD}/js/popup.min.js"
+          "#{BUILD}/js/main.min.js"
         ]
         dest: "#{JS}/youtoo_tools.min.js"
     copy:
