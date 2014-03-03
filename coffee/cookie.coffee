@@ -8,12 +8,10 @@ class Cookie
 
   @clear_all: (opts = {}, done = ->) ->
     Debug.log "Clearing all cookies"
-    return done()
     chrome.browsingData.removeCookies opts, done
 
   @dump: (opts = {}, done = ->) ->
     Debug.log "Dumping cookies"
-    return done()
     chrome.cookies.getAll opts, (cookies) ->
       done() unless cookies
       Debug.log "Found #{cookies.length} cookies"

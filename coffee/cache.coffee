@@ -4,7 +4,6 @@ class Cache
 
   @clear: (done = ->) ->
     Debug.log "Clearing the browser cache"
-    return done()
     chrome.browsingData.removeCache {}, ->
       Debug.log "Browser cache cleared"
       done()

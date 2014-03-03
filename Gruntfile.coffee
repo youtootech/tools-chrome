@@ -61,7 +61,6 @@ module.exports = (grunt) ->
       css:
         src: [
           "#{BUILD}/css/typography.min.css"
-          # "#{BUILD}/css/bootstrap.min.css"
           "#{BUILD}/css/**/*.min.css"
           "#{BUILD}/css/youtoo_tools.min.css"
         ]
@@ -83,9 +82,8 @@ module.exports = (grunt) ->
         flatten: true
         filter: 'isFile'
         src: [
-          # "#{BOWER}/bootstrap/dist/js/bootstrap.min.js"
           "#{BOWER}/jquery/dist/jquery.min.js"
-          # "#{BOWER}/zeptojs/dist/zepto.min.js"
+          "#{BOWER}/async/lib/async.js"
         ]
         dest: 'build/js/vendor'
       css:
@@ -93,7 +91,7 @@ module.exports = (grunt) ->
         flatten: true
         filter: 'isFile'
         src: [
-          # "#{BOWER}/bootstrap/dist/css/bootstrap.min.css"
+          #
         ]
         dest: 'build/css'
       fonts:
@@ -101,7 +99,7 @@ module.exports = (grunt) ->
         flatten: true
         filter: 'isFile'
         src: [
-          # "#{BOWER}/bootstrap/dist/fonts/*"
+          #
         ]
         dest: 'lib/fonts/'
     cssmin:
