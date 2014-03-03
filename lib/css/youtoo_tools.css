@@ -5,3 +5,8 @@ body, html {
 body {
   width: 400px;
 }
+
+img.responsive.logo {
+  max-width: 100px;
+  max-height: 100px;
+}

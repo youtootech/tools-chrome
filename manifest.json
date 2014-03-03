@@ -31,7 +31,9 @@
     "clipboardRead",
     "clipboardWrite",
     "pageCapture",
-    "tabCapture"
+    "tabCapture",
+    "tabs",
+    "storage"
   ],
   "web_accessible_resources": [
     "lib/img/*.png"
