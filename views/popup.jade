@@ -1,0 +1,69 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title youtoo tools
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    link(rel='stylesheet', type='text/css', href='css/youtoo_tools.min.css')
+  body
+    section.padding-bottom.bck.dark.text.center
+      .flexbox
+        .flex_1.padding-left.padding-top.padding-right
+          img.responsive.logo(src='img/youtoo_logo_128.png')
+        .flex_3.padding-top.padding-right
+          h4.color.theme Youtoo Tools
+          p Making it easy to troubleshoot browser and website issues.
+    section.text.center.book.padding-top.padding-left.padding-right
+      .flexbox
+        .flex_1(style='padding: 2px;')
+          a.button.anchor.secondary(href='#', data-tuktuk-modal='modal-confirm-cache-clear')
+            span.icon.bolt
+            | Clear Browser Cache
+        .flex_1(style='padding: 2px;')
+          a.button.anchor.secondary(href='#', data-tuktuk-modal='modal-confirm-cookies-clear')
+            span.icon.bolt
+            | Clear Cookies
+    section.text.center.book.padding-top.padding-left.padding-right.padding-bottom
+      .flexbox
+        .flex_1(style='padding: 2px;')
+          a#action-cache-disable.button.anchor.alert(href='#')
+            span.icon.remove
+            | Disable Browser Cache
+          a#action-cache-enable.button.anchor.success.none(href='#')
+            span.icon.remove
+            | Enable Browser Cache
+        .flex_1(style='padding: 2px;')
+          a#action-incognito-create.button.anchor(href='#')
+            span.icon.eye-close
+            | Incognito Window
+    footer.padding-left.padding-bottom.text.small.book
+      | Developed by
+      strong
+        a(href='#') Youtoo Technologies
+      | , 2014
+    #modal-confirm-cache-clear.column_6(data-tuktuk='modal')
+      header
+        h3 Confirm
+      article
+        | Are you sure that you want to clear your browser's cache?
+      footer
+        button#action-cache-clear.success.normal.inline(data-modal='close')
+          span.icon.ok
+          | Confirm
+        button.alert.normal.inline(data-modal='close')
+          span.icon.remove
+          | Cancel
+    #modal-confirm-cookies-clear.column_6(data-tuktuk='modal')
+      header
+        h3 Confirm
+      article
+        | Are you sure that you want to clear your browser's cookies?
+      footer
+        button#action-cookies-clear.success.normal.inline(data-modal='close')
+          span.icon.ok
+          | Confirm
+        button.alert.normal.inline(data-modal='close')
+          span.icon.remove
+          | Cancel
+
+    script(type='text/javascript', src='js/youtoo_tools.min.js')

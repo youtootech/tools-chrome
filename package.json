@@ -1,0 +1,29 @@
+{
+  "name": "youtoo-tools",
+  "version": "0.0.1",
+  "description": "Chrome extension that will allow clients to easily access actions during debugging, such as clearing cookies and cache.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/youtootech/tools-chrome"
+  },
+  "author": "Pierce Moore <me@prex.io>",
+  "bugs": {
+    "url": "https://github.com/youtootech/tools-chrome/issues"
+  },
+  "dependencies": {
+    "grunt-banner": "latest",
+    "grunt-bump": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-coffee": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-image-resize": "latest",
+    "grunt-contrib-jade": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-devtools": "latest",
+    "grunt-lesslint": "latest"
+  }
+}

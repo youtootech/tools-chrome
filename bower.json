@@ -1,0 +1,23 @@
+{
+  "name": "site",
+  "version": "0.0.1",
+  "homepage": "https://github.com/youtootech/tools-chrome",
+  "authors": [
+    "Pierce Moore <me@prex.io>"
+  ],
+  "description": "Chrome extension that will allow clients to easily access actions during debugging, such as clearing cookies and cache.",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "async": "latest",
+    "mocha": "latest",
+    "foundation": "latest",
+    "tuktuk": "0.7.6",
+    "zeptojs": "latest"
+  }
+}
