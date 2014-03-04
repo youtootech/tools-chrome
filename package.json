@@ -1,6 +1,6 @@
 {
   "name": "youtoo-tools",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Chrome extension that will allow clients to easily access actions during debugging, such as clearing cookies and cache.",
   "repository": {
     "type": "git",

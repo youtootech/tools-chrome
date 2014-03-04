@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Youtoo Tools",
   "short_name": "Youtoo Tools",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Chrome extension that will allow clients to easily access actions during debugging, such as clearing cookies and cache.",
   "icons": {
     "16": "lib/img/youtoo_logo_16.png",
