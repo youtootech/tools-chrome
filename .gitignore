@@ -17,3 +17,5 @@ bower_components
 .DS_Store
 build/
 lib/
+packages/
+zips/

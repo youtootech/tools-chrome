@@ -1,5 +1,7 @@
+child_process = require 'child_process'
+
 # Generic processing function
-process = (src, path) ->
+processFile = (src, path) ->
   console.log "Processing file: #{path}"
   return "/** Source File: #{path} **/ \n#{src}\n"
 
@@ -57,7 +59,7 @@ module.exports = (grunt) ->
       options:
         separator: '\n'
         # stripBanners: true
-        process: process
+        process: processFile
       css:
         src: [
           "#{BUILD}/css/typography.min.css"
@@ -76,7 +78,7 @@ module.exports = (grunt) ->
         dest: "#{JS}/youtoo_tools.min.js"
     copy:
       options:
-        processContent: process
+        processContent: processFile
       js:
         expand: true
         flatten: true
@@ -102,6 +104,12 @@ module.exports = (grunt) ->
           #
         ]
         dest: 'lib/fonts/'
+      package:
+        src: [
+          'lib/**/*'
+          'manifest.json'
+        ]
+        dest: "packages/youtoo-tools-v<% grunt.manifest.version %>/"
     cssmin:
       options:
         report: 'min'
@@ -226,6 +234,10 @@ module.exports = (grunt) ->
           'views/**/*.jade'
         ]
         tasks: ['jade']
+    zip:
+      package:
+        src: ["packages/youtoo-tools-v<% grunt.manifest.version %>/"]
+        dest: "zips/youtoo-tools-v<% grunt.manifest.version %>.zip"
 
   grunt.loadNpmTasks 'grunt-banner'
   grunt.loadNpmTasks 'grunt-bump'
@@ -242,12 +254,25 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-image-resize'
   grunt.loadNpmTasks 'grunt-lesslint'
 
+  grunt.task.registerTask 'make_release', "Creates the version-specific folder to zip before packaging", ->
+    done = this.async()
+    manifest = grunt.file.readJSON "manifest.json"
+    new_package_name = "youtoo-tools-v#{manifest.version}"
+    new_package_path = "packages/#{new_package_name}"
+    grunt.file.mkdir new_package_path
+
+    child_process.exec "cp -r lib/ #{new_package_path}/lib", (err, stdout, stderr) ->
+      child_process.exec "cp manifest.json #{new_package_path}", (err, stdout, stderr) ->
+        child_process.exec "zip -r ../zips/#{new_package_name}.zip #{new_package_name}", { cwd: 'packages/' }, (err, stdout, stderr) ->
+          done()
+
   ###
     Release tasks
   ###
   grunt.registerTask 'major', ['app', 'bump:major']
   grunt.registerTask 'release', ['app', 'bump:minor']
   grunt.registerTask 'patch', ['app', 'bump:patch']
+  grunt.registerTask 'package', ['build', 'make_release']
 
   ###
     Actual code/build tasks
